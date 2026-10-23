@@ -391,9 +391,8 @@ with col_main:
 with col_qr:
     st.markdown("### 📱 Telefonla Katıl")
 
-    local_ip = get_local_ip()
-    port = "8501"
-    target_url = f"http://{local_ip}:{port}"
+    # Canlı İnternet Adresi
+    target_url = "https://yiu-ekran-bagimliligi.streamlit.app"
 
     qr = qrcode.QRCode(
         version=1,
@@ -412,6 +411,5 @@ with col_qr:
 
     st.image(byte_im, use_container_width=True)
     st.info(
-        f"Aynı Wi-Fi ağına bağlı telefonunuzun kamerasıyla taratarak"
-        f" katılabilirsiniz:\n\n`{target_url}`"
+        f"Kameranızla QR kodu taratarak doğrudan katılabilirsiniz:\n\n`{target_url}`"
     )
